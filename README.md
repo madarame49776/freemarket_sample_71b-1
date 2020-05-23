@@ -1,36 +1,20 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-** userテーブル **
+# userテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null:false|
 |password|string|null:false|
-|paying_way|string|null:false|
+|paying_way|integer|null:false|
 
 Association
 
-- has_many:favorite
-- has_many:comment
+- has_many:favorites
+- has_many:comments
 - has_many:products
-- has_many:order_starus
+- has_many:order_staruses
 - belongs_to:address
 
-** users_profileテーブル(enumで管理) **
+# users_profileテーブル(enumで管理)
 
 |Column|Type|Options|
 |------|----|-------|
@@ -39,11 +23,11 @@ Association
 |last_name_kana|string|null:false|
 |first_name_kana|string|null:false|
 |tel_number|string|null:false|
-|biryh_y|string|null:false|
-|biryh_m|string|null:false|
-|biryh_d|string|null:false|
+|biryh_y|integer|null:false|
+|biryh_m|integer|null:false|
+|biryh_d|integer|null:false|
 
-** favoriteテーブル **
+# favoriteテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -52,10 +36,10 @@ Association
 
 Association
 
-- belongs_to:users
-- belongs_to:products
+- belongs_to:user
+- belongs_to:product
 
-** commentsテーブル **
+# commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -65,10 +49,10 @@ Association
 
 Association
 
-- belongs_to:users
-- belongs_to:products
+- belongs_to:user
+- belongs_to:product
 
-** order_statusテーブル **
+# order_statusテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -79,11 +63,11 @@ Association
 
 Association
 
-- belongs_to:users
-- belongs_to:products
-- has_many:transection_record
+- belongs_to:user
+- belongs_to:product
+- has_many:transection_records
 
-** transaction_recordテーブル **
+# transaction_recordテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null:false,foregin_key:true|
@@ -94,7 +78,7 @@ Association
 - belongs_to:order_status
 
 
-** productsテーブル **
+# productsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -110,15 +94,15 @@ Association
 Association
 
 - belongs_to:user
-- has_many:favorite
+- has_many:favorites
 - has_many:comments
-- has_many:order_status
+- has_many:order_statuses
 - belongs_to:category
 - has_many:images
 
 
 
-** addressテーブル **
+# addressテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -131,9 +115,9 @@ Association
 
 Asscsiation
 
-- belongs_to:users
+- belongs_to:user
 
-** categoryテーブル **
+# categoryテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -143,7 +127,7 @@ Asscsiation
 
 - has_many:products
 
-** imagesテーブル **
+# imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -152,15 +136,4 @@ Asscsiation
 
 Association
 
-- belongs_to:products
-
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
+- belongs_to:product

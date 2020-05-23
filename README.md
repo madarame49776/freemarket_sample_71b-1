@@ -74,7 +74,8 @@ Association
 |------|----|-------|
 |purchaser_id|integer|null:false,add_index/add_foreign|
 |seller_id|integer|null:false,add_index/add_foreign|
-|comment|text|null:false,foregin_key:true|
+|status|integer|null:false|
+|item_id|reference|null:false,foregin_key:true|
 
 Association
 

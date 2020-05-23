@@ -43,7 +43,7 @@ Association
 |biryh_m|string|null:false|
 |biryh_d|string|null:false|
 
-** favoliteテーブル **
+** favoriteテーブル **
 
 |Column|Type|Options|
 |------|----|-------|

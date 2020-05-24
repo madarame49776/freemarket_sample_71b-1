@@ -1,106 +1,55 @@
-# README
+# usersテーブル
 
-
-# userテーブル 
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
 |email|string|null:false|
-|first_name|string|null:false|
-|last_name|string|null:false|
-|first_name_kana|string|null:false|
-|last_name_kana|string|null:false|
-|tel_number|string|null:false|
-|nickname|string|null:false|
-|password|string|null:false,unique:true|
-|birth_year|integer|null:false|
-|birth_month|integer|null:false|
-|birth_day|string|null:fals|
+|password|string|null:false|
+|paying_way|integer|null:false|
 
 Association
 
-- has_many:product
-- has_many:comment
-- has_many:favorite
-- belongs_to:address
-- belongs_to:cards
+- has_many:favorites, dependent: :destroy
+- has_many:comments
+- has_many:products
+- has_many:order_statuses
+- has_many:address, dependent: :destroy
+- has_one:users_profile
 
-
-# addressテーブル 
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|reference|null:false,foregin_key:true|
-|post_number|string|null:false|
-|prefecture|string|null:false|
-|city|string|null:false|
-|address|string|null:false|
-|apartment|string|null:false|
-
-Asscsiation
-
-- belongs_to:users
-
-
-# productテーブル 
+# users_profilesテーブル(enumで管理)
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null:false|
-|user_id|reference|null:false,foregin_key:true|
-|category_id|reference|null:false,forgin_key:true|
-|brand|----|-------|
-|condition|string|null:false|
-|postage|string|null:false|
-|size|reference|null:false,foregin_key:true|
-|explanation|text|null:false|
+|first_name|string|null:false|
+|last_name|string|null:false|
+|last_name_kana|string|null:false|
+|first_name_kana|string|null:false|
+|tel_number|string|null:false|
+|biryh_y|integer|null:false|
+|biryh_m|integer|null:false|
+|biryh_d|integer|null:false|
 
 Association
 
 - belongs_to:user
-- belongs_to:category
-- belongs_to:size
-- has_many:images
-- has_many:comment
-- has_many:favorite
 
 
-# imagesテーブル 
+# favoritesテーブル
+
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null:false|
-|product_id|reference|null:false,foregin_key:true|
+|user_id|reference|null:false,foregin_key:true|
+|product|reference|null:false,foregin_key:true|
 
 Association
 
+- belongs_to:user
 - belongs_to:product
 
 
-# cardテーブル 
+# commentsテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-|user|reference|null:false,foregin_key:true|
-|customer|string|null:false|
-|card_id|string|null:false|
-
-Association
-
-- belongs_to:user
-
-
-# categoryテーブル 
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null:false|
-
-- has_many:product
-
-
-# commentテーブル 
 
 |Column|Type|Options|
 |------|----|-------|
@@ -114,26 +63,97 @@ Association
 - belongs_to:product
 
 
-# favoliteテーブル 
+# order_statusesテーブル
+
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null:false,foregin_key:true|
-|product|reference|null:false,foregin_key:true|
+|purchaser_id|integer|null:false,add_index/add_foreign|
+|seller_id|integer|null:false,add_index/add_foreign|
+|status|integer|null:false|
+|item_id|reference|null:false,foregin_key:true|
 
 Association
 
 - belongs_to:user
 - belongs_to:product
+- has_many:transection_records
 
 
-# sizeテーブル 
+# transaction_recordesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|size|string|null:false|
+|user_id|reference|null:false,foregin_key:true|
+|order_status|reference|null:false,foregin_key:true|
 
 Association
 
-- has_many:product
+- belongs_to:order_status
 
+
+
+# productsテーブル
+
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:false|
+|category_id|reference|null:false,forgin_key:true|
+|condition|string|null:false|
+|price|string|null:false|
+|shipping_days|string|null:false|
+|postage|string|null:false|
+|user_id|string|null:false,foregin_key:true|
+|explanation|text|null:false|
+
+
+Association
+
+- belongs_to:user
+- has_many:favorites
+- has_many:comments
+- has_many:order_statuses
+- belongs_to:category
+- has_many:images
+
+# addressesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null:false,foregin_key:true|
+|post_number|string|null:false|
+|city|string|null:false|
+|block|string|null:false|
+|address|string|null:false|
+|bulding_name|string|null:false|
+
+Asscsiation
+
+- belongs_to:user
+
+
+# categoriesテーブル
+
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:false|
+|ancestry|string|null:false|
+
+
+Asscsiation
+
+- has_many:products
+- has_ancestry
+
+# imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null:false|
+|product_id|reference|null:false,foregin_key:true|
+
+Association
+
+- belongs_to:product

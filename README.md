@@ -1,5 +1,6 @@
 # usersテーブル
 
+
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null:false|
@@ -32,7 +33,9 @@ Association
 
 - belongs_to:user
 
+
 # favoritesテーブル
+
 
 |Column|Type|Options|
 |------|----|-------|
@@ -44,7 +47,9 @@ Association
 - belongs_to:user
 - belongs_to:product
 
+
 # commentsテーブル
+
 
 |Column|Type|Options|
 |------|----|-------|
@@ -57,7 +62,9 @@ Association
 - belongs_to:user
 - belongs_to:product
 
+
 # order_statusesテーブル
+
 
 |Column|Type|Options|
 |------|----|-------|
@@ -72,7 +79,9 @@ Association
 - belongs_to:product
 - has_many:transection_records
 
+
 # transaction_recordesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null:false,foregin_key:true|
@@ -83,7 +92,9 @@ Association
 - belongs_to:order_status
 
 
+
 # productsテーブル
+
 
 |Column|Type|Options|
 |------|----|-------|
@@ -96,6 +107,7 @@ Association
 |user_id|string|null:false,foregin_key:true|
 |explanation|text|null:false|
 
+
 Association
 
 - belongs_to:user
@@ -104,8 +116,6 @@ Association
 - has_many:order_statuses
 - belongs_to:category
 - has_many:images
-
-
 
 # addressesテーブル
 
@@ -122,12 +132,15 @@ Asscsiation
 
 - belongs_to:user
 
+
 # categoriesテーブル
+
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
 |ancestry|string|null:false|
+
 
 Asscsiation
 

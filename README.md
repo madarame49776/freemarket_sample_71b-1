@@ -1,4 +1,4 @@
-# userテーブル
+# usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -8,13 +8,14 @@
 
 Association
 
-- has_many:favorites
+- has_many:favorites, dependent: :destroy
 - has_many:comments
 - has_many:products
-- has_many:order_staruses
-- belongs_to:address
+- has_many:order_statuses
+- has_many:address, dependent: :destroy
+- has_one:users_profile
 
-# users_profileテーブル(enumで管理)
+# users_profilesテーブル(enumで管理)
 
 |Column|Type|Options|
 |------|----|-------|
@@ -27,7 +28,11 @@ Association
 |biryh_m|integer|null:false|
 |biryh_d|integer|null:false|
 
-# favoriteテーブル
+Association
+
+- belongs_to:user
+
+# favoritesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -52,7 +57,7 @@ Association
 - belongs_to:user
 - belongs_to:product
 
-# order_statusテーブル
+# order_statusesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -67,7 +72,7 @@ Association
 - belongs_to:product
 - has_many:transection_records
 
-# transaction_recordテーブル
+# transaction_recordesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null:false,foregin_key:true|
@@ -102,7 +107,7 @@ Association
 
 
 
-# addressテーブル
+# addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -117,15 +122,17 @@ Asscsiation
 
 - belongs_to:user
 
-# categoryテーブル
+# categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
+|ancestry|string|null:false|
 
 Asscsiation
 
 - has_many:products
+- has_ancestry
 
 # imagesテーブル
 

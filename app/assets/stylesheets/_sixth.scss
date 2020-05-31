@@ -1,0 +1,37 @@
+.sixth-headline {
+  background-image: url(http://furima.tokyo/assets/bg-appBanner-pict-ce684a4c4d5fa2da43c30a3839923591af75a642a3a906ad975065771ef3d72f.jpg);
+  background-position: bottom right;
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  &__contents {
+    color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+    &__title {
+      font-size: 27px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    &__text {
+      margin: 20px 0 30px;
+      font-size: 35px;
+    }
+    &__icon {
+      display: flex;
+      margin-left: 300px;
+      .apple-icon {
+        width: 180px;
+        margin-right: 10px;
+      }
+      .google-icon {
+        width: 180px;
+      }
+      
+    }
+  }
+}

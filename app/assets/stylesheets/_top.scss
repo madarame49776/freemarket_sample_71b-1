@@ -1,0 +1,47 @@
+.top-headline {
+  width: 90%;
+  height: 560px;
+  background-image: url(http://furima.tokyo/assets/bg-mainVisual-pict_pc-a1a4be0d864c29338b03d163957f9fd26b20f7c1fa0d05c17b603ec54d249ebe.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  padding: 0 60px;
+  align-items: center;
+  .contents {
+    width: 100%;
+    max-width: 1280px;
+    padding: 35px 0 0 0;
+    margin: 0 auto;
+    &__title {
+      font-size: 60px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      color: white;
+    }
+    &__subtitle {
+      font-size: 18px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      color: white;
+      margin: 30px 0;
+    }
+    &__items {
+      .apple-items {
+        margin-right: 10px;
+        .a-items {
+          width: 180px;
+        }
+      }
+      .google-items {
+        .g-items {
+          width: 180px;
+        }
+      }
+    }
+  }
+  &__pictures {
+    position: absolute;
+    top: 0;
+    right: 210px;
+  }
+  
+}

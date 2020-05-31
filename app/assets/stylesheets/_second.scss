@@ -1,0 +1,70 @@
+.second-headline {
+  padding: 60px 20px;
+  img {
+    width: 100%;
+  }
+  &__lists {
+    max-width: 1020px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    .list {
+      width: 30%;
+      margin: 16px 5% 0 0;
+      align-items: center;
+      flex-direction: column;
+      &__pict {
+        position: relative;
+        .number {
+          position: absolute;  
+          top: 0;
+          left: 0;   
+          background-color: #3ccace; 
+          color: white;
+          font-size: 30px;
+          padding: 10px 20px;
+          text-align: center;
+          border-radius: 4%;
+          display: inline-block;
+          }
+        }
+        &__text {
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+          margin-top: 10px;
+        }
+        &__explanation {
+          margin-top: 20px;
+          font-size: 18px;
+        }
+      }
+      
+    .list--end {
+      margin: 16px 0 0 ;
+      width: 30%;
+    }
+  }
+  &__title {
+    text-align: center;
+    font-size: 26px;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    position: relative;
+    &::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3CCACE;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%); 
+    }
+  }
+
+}
+  

@@ -1,6 +1,7 @@
 .seven-headline {
   background-color: #f8f8f8;
-  padding-bottom: 80px;
+  height: 100%;
+  padding: 80px 0;
   .title {
     text-align: center;
     font-weight: bold;
@@ -11,20 +12,25 @@
       text-align: center;
       color: #17c1db;
       font-size: 24px;
-      .heading {
-        font-weight: bold;
+      a {
+        color: #17c1db;
+        text-decoration: none;
+        .heading {
+          font-weight: bold;
+        }
       }
     }
   }
   .contents-lists {
     display: flex;
     justify-content: space-around;
-    margin:  26px auto;
+    margin: 26px auto;
     width: 780px;
     .contents-list {
       width: 220px;
       background-color: white;
-      .a {
+      display: inline-block;
+      a {
         display: inline-block;
         text-decoration: none;
       }
@@ -50,11 +56,11 @@
         text-align: left;
         padding: 13px;
         color: black;
+        
         .name {
           font-size: 13px;
           line-height: 1.5;
           overflow: hidden;
-          
         }
         .data {
           font-size: 16px;
@@ -62,6 +68,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            
           }
           p {
             font-size: 10px;

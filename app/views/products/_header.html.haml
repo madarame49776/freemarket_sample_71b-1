@@ -2,15 +2,15 @@
   .header__contents
     .header__contents--main
       .header__contents--main-icon
-        %a{:herf => "#"}
-          %img{:src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}
+        =link_to "#" do
+          =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
       .searchbox
         %form{"accept-charset" => "UTF-8", :action => "#", :method => "get", :class => "form"}
           %input{:name => "utf8", :type => "hidden", :value => "✓",}/
           %input.search-input{:name => "key",:placeholder => "キーワードから探す" }/
           %button{:type => "submit", :class => "botton"}
             .header__contents--main-search-item
-              %img{:src => "http://furima.tokyo/assets/icon-search-60a83ada85216fe00789cd16065281694d9a08948275fef83683fadcf131d84d.svg"}
+              =image_tag "http://furima.tokyo/assets/icon-search-60a83ada85216fe00789cd16065281694d9a08948275fef83683fadcf131d84d.svg"
     .header__contents--menu
       %ul.right-items
         %li.right-items__category

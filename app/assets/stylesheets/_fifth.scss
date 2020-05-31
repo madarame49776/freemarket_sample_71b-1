@@ -68,17 +68,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            li {
-              .fa.fa-star.likeIcon  {
-                font-size: inherit;
-              }
-            }
-            }
-            p {
-              font-size: 10px;
-            }
+            
+          }
+          p {
+            font-size: 10px;
           }
         }
+      }
     }
   }
 }

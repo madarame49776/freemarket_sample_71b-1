@@ -1,47 +1,66 @@
-%h2 Sign up
-= form_for(@user, url: user_registration_path) do |f|
-  = render "devise/shared/error_messages", resource: @user
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :last_name
-    %br/
-    = f.text_field :last_name
-    %br/
-    = f.label :first_name
-    %br/
-    = f.text_field :first_name
-    %br/
-  .field
-    = f.label :last_name_kana
-    %br/
-    = f.text_field :last_name_kana
-    %br/
-    = f.label :first_name_kana
-    %br/
-    = f.text_field :first_name_kana
-    %br/
-  .field
-    = f.label :birthday
-    %br/
-    = f.date_select :birthday
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.signup-container
+  .signup-hedder
+    %h1
+      %a
+        =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
+    .signup-hedder__signup-bar
+      %ol.signup-hedder__signup-bar__clearfix
+        %li.active
+          会員情報
+          .status
+        %li.active  
+          住所登録
+          .status
+        %li.active
+          完了
+          .status  
+  .signup-main
+    .signup-main__contents
+      = form_for(@user, url: user_registration_path) do |f|
+        = render "devise/shared/error_messages", resource: @user
+        .field
+          = f.label :nickname
+          %br/
+          = f.text_field :nickname
+        .field
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+        .field
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+        .field
+          = f.label :last_name
+          %br/
+          = f.text_field :last_name
+          %br/
+          = f.label :first_name
+          %br/
+          = f.text_field :first_name
+          %br/
+        .field
+          = f.label :last_name_kana
+          %br/
+          = f.text_field :last_name_kana
+          %br/
+          = f.label :first_name_kana
+          %br/
+          = f.text_field :first_name_kana
+          %br/
+        .field
+          = f.label :birthday
+          %br/
+          = f.date_select :birthday
+        .actions
+          = f.submit "Sign up"
+      = render "devise/shared/links"
+    .signup-footer
+      フリマアプリ

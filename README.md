@@ -3,10 +3,16 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|nickname|string|null:false|
 |email|string|null:false|
 |password|string|null:false|
-|paying_way|integer|null:false|
-
+|first_name|string|null:false|
+|last_name|string|null:false|
+|last_name_kana|string|null:false|
+|first_name_kana|string|null:false|
+|biryh_y|integer|null:false|
+|biryh_m|integer|null:false|
+|biryh_d|integer|null:false|
 Association
 
 - has_many:favorites, dependent: :destroy
@@ -14,24 +20,22 @@ Association
 - has_many:products
 - has_many:order_statuses
 - has_many:address, dependent: :destroy
-- has_one:users_profile
 
-# users_profilesテーブル(enumで管理)
+# addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|first_name|string|null:false|
-|last_name|string|null:false|
-|last_name_kana|string|null:false|
-|first_name_kana|string|null:false|
-|tel_number|string|null:false|
-|biryh_y|integer|null:false|
-|biryh_m|integer|null:false|
-|biryh_d|integer|null:false|
+|user_id|reference|null:false,foregin_key:true|
+|post_number|string|null:false|
+|city|string|null:false|
+|block|string|null:false|
+|address|string|null:false|
+|bulding_name|string|null:false|
 
-Association
+Asscsiation
 
 - belongs_to:user
+
 
 
 # favoritesテーブル
@@ -117,20 +121,6 @@ Association
 - belongs_to:category
 - has_many:images
 
-# addressesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|reference|null:false,foregin_key:true|
-|post_number|string|null:false|
-|city|string|null:false|
-|block|string|null:false|
-|address|string|null:false|
-|bulding_name|string|null:false|
-
-Asscsiation
-
-- belongs_to:user
 
 
 # categoriesテーブル

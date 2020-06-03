@@ -1,0 +1,50 @@
+%body
+  %main.purchase-confirm__main
+    .purchase-confirm__main-content 購入内容の確認
+    %section.purchase-confirm__main-products
+      .purchase-confirm__main-products-inside
+        %img{alt:"https://static.mercdn.net/thumb/photos/m23249414252_1.jpg?1587623882",src:"https://static.mercdn.net/thumb/photos/m23249414252_1.jpg?1587623882",class:"purchase-confirm__main-products-inside-img"}/
+        .purchase-confirm__main-products-inside-product
+          .purchase-confirm__main-products-inside-product--name
+            スペーサーリング 3mm
+          .purchase-confirm__main-products-inside-product--totalprice
+            .purchase-confirm__main-products-inside-product--totalprice-price ¥10,000
+            .purchase-confirm__main-products-inside-product--totalprice-taxandpostage （税込）送料込み
+    %section.purchase-confirm__main-details
+      .purchase-confirm__main-details-inside
+        .purchase-confirm__main-details-inside--price
+          .purchase-confirm__main-details-inside--price-left 支払い金額
+          .purchase-confirm__main-details-inside--price-right
+            .purchase-confirm__main-details-inside--price-right-price ¥10,000
+        .purchase-confirm__main-details-inside--pointcheck
+          %input{type:"checkbox"}/
+          %i.purchase-confirm__main-details-inside--pointcheck-icon-check
+          %label{for:"#"} ポイントを使用 (所持ポイント: P0)
+        .purchase-confirm__main-details-inside--payment
+          .purchase-confirm__main-details-inside--payment-method
+            .purchase-confirm__main-details-inside--payment-method-left 支払い方法
+            .purchase-confirm__main-details-inside--payment-method-right 
+              = link_to "#", class:"purchase-confirm__main-details-inside--payment-method-right-link" do
+                変更する
+          .purchase-confirm__main-details-inside--payment-info
+            クレジットカード
+            %br/
+            ************1111
+            %br/
+            有効期限 12 / 24
+          .purchase-confirm__main-details-inside--payment-logo
+            %img.purchase-confirm__main-details-inside--payment-logo-cardlogo{alt:"visa",height:"15",src:"https://pcweb-assets.mercdn.net/assets/img/card/visa.svg?1628008949",width:"49"}/
+        .purchase-confirm__main-details-inside--shippingaddress
+          .purchase-confirm__main-details-inside--shippingaddress-shipping
+            .purchase-confirm__main-details-inside--shippingaddress-shipping-left 配送先
+            .purchase-confirm__main-details-inside--shippingaddress-shipping-right 
+              = link_to "#", class:"purchase-confirm__main-details-inside--shippingaddress-shipping-right-link" do
+                変更する
+          .purchase-confirm__main-details-inside--shippingaddress-address
+            〒221-0000
+            %br/
+            神奈川県 横浜市神奈川区 ○○町○-○-◯
+            %br/
+            長谷川
+        .purchase-confirm__main-details-inside--purchasebutton
+          %button.purchase-confirm__main-details-inside--purchasebutton-button 購入する

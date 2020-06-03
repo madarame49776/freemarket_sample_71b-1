@@ -1,0 +1,152 @@
+html,
+  body {
+    min-height: 100%;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    background-color: #ccc;
+    .purchase-confirm__main{
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      &-content{
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 18px;
+        text-align: center;
+        padding: 16px;
+      }  
+      &-products{
+        padding: 24px 16px;
+        border-top: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5;
+        &-inside{
+          width: 100%;
+          max-width: 343px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: left;
+          &-img{
+            width: 80px;
+          }  
+          &-product{
+            padding: 0px 0px 0px 16px;
+            &--totalprice{
+              display: flex;
+              &-price{
+                font-size: 15px;
+                font-weight: 600px;
+              }
+              &-taxandpostage{
+                font-size: 12px;
+                font-weight: 600px;
+              }
+            }
+          } 
+        }
+      }  
+      &-details{
+        padding: 24px 16px 48px;
+        display: flex;
+        justify-content: center;
+        &-inside{
+          width: 100%;
+          max-width: 343px;
+          margin: 0 auto;
+          &--price{
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 20px;
+            &-left{
+              font-size: 18px;
+            }
+            &-right{
+              text-align: right;
+            }
+          }  
+          &--pointcheck{
+            position: relative;
+            padding: 0 0 0 5px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #888;
+            margin: 24px 0;
+            text-align: left;
+            &-icon-check{
+              position: absolute;
+              background: #ccc;
+              position: absolute;
+              left: 0;
+              width: 20px;
+              height: 20px;
+              border-radius: 2px;
+              border: 1px solid #ccc;
+              font-size: 10px;
+            }
+          }  
+          &--payment{
+            padding: 24px 0px;
+            font-size: 14px;
+            border-top: 1px solid #f5f5f5;
+            text-align: left;
+            &-method{
+              display: flex;
+              justify-content: space-between;
+              &-left{
+                font-weight: bold;
+              }  
+              &-right{
+                &-link{
+                  text-decoration: none;
+                  color: #0099e8;
+                }
+              }
+            }      
+            &-info{
+              margin: 8px 0px 0px;
+            }
+            &-logo{
+              margin: 8px 0px 0px 0px;
+              text-align: left;
+              &-cardlogo{
+                width: 49px;
+                height: 15px;
+              }
+            }
+          }    
+          &--shippingaddress{
+            padding: 24px 0px;
+            font-size: 14px;
+            border-top: 1px solid #f5f5f5;
+            &-shipping{
+              display: flex;
+              justify-content: space-between;
+              &-right{
+                &-link{
+                  text-decoration: none;
+                  color: #0099e8;
+                }
+              }
+            }      
+            &-address{
+              margin: 8px 0 0;
+            }
+          } 
+          &--purchasebutton{
+            padding: 24px 0px 0px;
+            line-height: 48px;
+            border-top: 1px solid #f5f5f5;
+            &-button{
+              background: #3CCACE;
+              width: 100%;
+              color: #fff;
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 48px;
+            }
+          }
+        }
+      }
+    } 
+  }

@@ -1,17 +1,46 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.signup-container
+  .signup-hedder
+    %h1
+      %a
+        =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
+  .signup-main
+    .signup-main__contents
+      %h2.signup-main__head
+        ログインしてください
+      = form_for(resource, as: resource_name, url: session_path(resource_name, class: "signup-main__form")) do |f|
+        .signup-main__input
+          .signup-main__form-group
+            = f.label :email,"メールアドレス", class: "signup-main__label"
+            %br
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "signup-main__field"
+          .add_nickname.add-all
+
+          .signup-main__form-group
+          = f.label :password,"パスワード", class: "signup-main__label"
+          %br
+          = f.password_field :password, autocomplete: "current-password", placeholder: "パスワードを入力してください", class: "signup-main__field"
+          .add_password-confirmation.add-all
+          
+          .signup-main__form-group
+          .actions
+            = f.submit "ログイン", class: "signup-main__submit"
+          - if devise_mapping.registerable? && controller_name != 'registrations'
+            = link_to "新規登録", new_registration_path(resource_name)
+            %br
+          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+            = link_to "パスワードをお忘れですか?", new_password_path(resource_name)
+            %br
+  .signup-footer
+    .clearfix
+      %ul
+        %li
+          %a= link_to "プライバシーポリシー"
+        %li
+          %a= link_to "フリマ利用規約"
+        %li
+          %a= link_to "特定取引に関する規約"
+      %a
+        =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
+      %p
+        %samll
+        © FURIMA, Inc.    

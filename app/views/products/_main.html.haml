@@ -1,0 +1,78 @@
+.showMain
+  .contentRight
+    .topContent
+      .itemBox
+        .itemBox__name
+          Product1
+        .itemBox__body
+          %ul.mainImage__ul
+            %li.mainImage__li
+              = image_tag "https://media.istockphoto.com/photos/mens-black-blank-tshirt-templatefrom-two-sides-natural-shape-on-for-picture-id1151955707", class: "mainImage",size: "600x400"
+              %ul.subImage__ul
+                %li.subImage__li
+                  =image_tag "https://cdn.pixabay.com/photo/2013/09/12/16/14/t-shirt-181707_1280.png", class: "subImage"
+                %li.subImage__li
+                  =image_tag "https://media.istockphoto.com/vectors/unique-pattern-children-tshirt-illustration-vector-id1131920436", class: "subImage"
+                %li.subImage__li
+                  =image_tag "https://media.istockphoto.com/vectors/unique-pattern-children-tshirt-illustration-vector-id1131921184?s=170x170", class: "subImage"
+        .itemBox__price
+          %span.itemPrice
+            ¥2980
+          .itemBox__price-detail
+            %span
+              (税込)
+            %span
+              送料込み
+        .itemDetail
+          親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+        .table
+          %table
+            %tbody
+              %tr
+                %th
+                  出品者
+                %td
+                  hoge
+              %tr
+                %th
+                  カテゴリー
+                %td
+                  = link_to "#", class: "tableCategory" do
+                    メンズ 
+                  %br
+                  = link_to "#", class: "tableCategory" do
+                    トップス
+                  %br
+                  = link_to "#", class: "tableCategory" do
+                    シャツ
+              %tr
+                %th
+                  状態
+                %td
+                  非常に悪い
+              %tr
+                %th
+                  発送元の地域
+                %td
+                  東京
+              %tr
+                %th
+                  発送までの日数
+                %td
+                  1~2日
+              %tr
+                %th
+                  送料
+                %td
+                  200円
+              %tr
+                %th
+                  説明 
+                %td
+                  寝巻きに使っていました。ところどころ汚いですがギリギリ使えると思います。
+      .commentBox
+        %form{"accept-charset" => "UTF-8", :action => "#", :method => "get", :class => "commentForm"}
+          %textarea{:name => "comments", :rows => "3", :class => "commentTextarea"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓",}
+          %button{:type => "submit", :onclick => "#", :class => "commentBtn"}
+            コメントする

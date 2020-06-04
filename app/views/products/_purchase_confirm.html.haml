@@ -3,7 +3,7 @@
     .purchase-confirm__main-content 購入内容の確認
     %section.purchase-confirm__main-products
       .purchase-confirm__main-products-inside
-        %img{alt:"https://static.mercdn.net/thumb/photos/m23249414252_1.jpg?1587623882",src:"https://static.mercdn.net/thumb/photos/m23249414252_1.jpg?1587623882",class:"purchase-confirm__main-products-inside-img"}/
+        = image_tag "https://static.mercdn.net/thumb/photos/m23249414252_1.jpg?1587623882",class:"purchase-confirm__main-products-inside-img" 
         .purchase-confirm__main-products-inside-product
           .purchase-confirm__main-products-inside-product--name
             スペーサーリング 3mm
@@ -33,7 +33,7 @@
             %br/
             有効期限 12 / 24
           .purchase-confirm__main-details-inside--payment-logo
-            %img.purchase-confirm__main-details-inside--payment-logo-cardlogo{alt:"visa",height:"15",src:"https://pcweb-assets.mercdn.net/assets/img/card/visa.svg?1628008949",width:"49"}/
+            = image_tag "https://pcweb-assets.mercdn.net/assets/img/card/visa.svg?1628008949" ,class:"purchase-confirm__main-details-inside--payment-logo-cardlogo"
         .purchase-confirm__main-details-inside--shippingaddress
           .purchase-confirm__main-details-inside--shippingaddress-shipping
             .purchase-confirm__main-details-inside--shippingaddress-shipping-left 配送先

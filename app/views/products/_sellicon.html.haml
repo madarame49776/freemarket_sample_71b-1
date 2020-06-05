@@ -1,4 +1,5 @@
 .sellicon
-  %span.sellicon__title
-    出品する
-  =image_tag "http://furima.tokyo/assets/icon_camera-968c5ebaa05319bf1e2ad7508f852dd712504a4d26a1930d8bd87ec03ebcc37a.svg", class: "sellicon__img"
+  =link_to "/products/new" do
+    %span.sellicon__title
+      出品する
+    =image_tag "http://furima.tokyo/assets/icon_camera-968c5ebaa05319bf1e2ad7508f852dd712504a4d26a1930d8bd87ec03ebcc37a.svg", class: "sellicon__img"

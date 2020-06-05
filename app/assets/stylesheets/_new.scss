@@ -36,16 +36,6 @@ textarea {
 .label {
   margin-bottom: 10px;
 }
-select {
-  height: 58px;
-  width: 100%;
-  border-radius: 4px;
-  border-color: #cccccc;
-  padding: 0 20px;
-  margin-top: 10px;
-  -webkit-appearance: none;
-
-}
 .option {
   font-weight: normal;
     display: block;
@@ -149,6 +139,16 @@ hr {
       position: absolute;
       right: 13px;
       top: 24px;
+    }
+    .select-input {
+      height: 58px;
+      width: 100%;
+      border-radius: 4px;
+      border-color: #cccccc;
+      padding: 0 20px;
+      margin-top: 10px;
+      -webkit-appearance: none;
+    
     }
   }
   .price {

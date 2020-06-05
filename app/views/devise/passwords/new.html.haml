@@ -1,10 +1,33 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+.signup-container
+  .signup-hedder
+    %h1
+      %a
+        =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
+  .signup-main
+    .signup-main__contents
+      %h2.signup-main__head
+        パスワードをお忘れの方
+      = form_for(resource, as: resource_name, url: password_path(resource_name, class: "signup-main__form"), html: { method: :post }) do |f|
+        .signup-main__input
+          .signup-main__form-group  
+            = f.label :email,"メールアドレス", class: "signup-main__label"
+            %br
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "ご登録されたメールアドレス", class: "signup-main__field"
+            ご登録されたメールアドレスにパスワード再設定のご案内が送信されます。
+          .actions
+            = f.submit "送信する", class: "signup-main__submit"
+  .signup-footer
+    .clearfix
+      %ul
+        %li
+          %a= link_to "プライバシーポリシー"
+        %li
+          %a= link_to "フリマ利用規約"
+        %li
+          %a= link_to "特定取引に関する規約"
+      %a
+        =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
+      %p
+        %samll
+        © FURIMA, Inc.          
+

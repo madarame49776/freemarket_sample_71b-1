@@ -1,26 +1,79 @@
-%h2 住所情報登録
-= form_for @address do |f|
-  = render "devise/shared/error_messages", resource: @address
-  .field
-    = f.label :post_number
-    %br/
-    = f.text_field :post_number
-  .field
-    = f.label :city
-    %br/
-    = f.text_field :city
-  .field
-    = f.label :block
-    %br/
-    = f.text_field :block
-  .field
-    = f.label :address
-    %br/
-    = f.text_field :address
-  .field
-    = f.label :bulding_name
-    %br/
-    = f.text_field :bulding_name
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.signup-container
+  .signup-hedder
+    %h1
+      %a
+        =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
+    .signup-hedder__signup-bar
+      %ol.signup-hedder__signup-bar__clearfix
+        %li.active
+          会員情報
+          .status4
+        %li.active  
+          住所登録
+          .status5
+        %li.active
+          完了
+          .status6  
+  .signup-main
+    .signup-main__contents
+      %h2.signup-main__head
+        住所情報登録
+      = form_for @address,class: "signup-main__form" do |f|
+        .signup-main__input
+          .signup-main__form-group
+            = render "devise/shared/error_messages", resource: @address
+            = f.label :post_number,"郵便番号", class: "signup-main__label"
+            %span.signup-main__require
+              必須
+            %br
+            = f.text_field :post_number,placeholder: "例)123-4567", class: "signup-main__field"
+          .add_post_number.add-all
+
+          .signup-main__form-group
+            = f.label :city,"都道府県", class: "signup-main__label"
+            %span.signup-main__require
+              必須
+            %br
+            = f.text_field :city,placeholder: "例)東京都", class: "signup-main__field"
+          .add_city.add-all
+
+          .signup-main__form-group
+            = f.label :block,"市区町村", class: "signup-main__label"
+            %span.signup-main__require
+              必須
+            %br
+            = f.text_field :block,placeholder: "例)渋谷区", class: "signup-main__field"
+          .add_block.add-all
+
+          .signup-main__form-group
+            = f.label :address,"番地", class: "signup-main__label"
+            %span.signup-main__require
+              必須
+            %br
+            = f.text_field :address,placeholder: "例)道玄坂1-1", class: "signup-main__field"
+          .add_address.add-all
+
+          .signup-main__form-group
+            = f.label :bulding_name,"建物名", class: "signup-main__label"
+            %span.signup-main__require
+              任意
+            %br
+            = f.text_field :bulding_name,placeholder: "例)〇〇ビル 101", class: "signup-main__field"
+            %p
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .actions
+            = f.submit "次へ進む", class: "signup-main__submit"
+  .signup-footer
+    .clearfix
+      %ul
+        %li
+          %a= link_to "プライバシーポリシー"
+        %li
+          %a= link_to "フリマ利用規約"
+        %li
+          %a= link_to "特定取引に関する規約"
+      %a
+        =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
+      %p
+        %samll
+        © FURIMA, Inc.          

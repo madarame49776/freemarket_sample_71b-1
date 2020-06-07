@@ -147,4 +147,3 @@ Asscsiation
 Association
 
 - belongs_to:product
-ai

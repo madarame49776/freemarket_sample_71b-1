@@ -1,4 +1,5 @@
 class Address < ApplicationRecord
+  #確認
   belongs_to :user, optional: true
 
   with_options presence: true do

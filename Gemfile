@@ -78,4 +78,5 @@ gem 'pry-rails'
 gem 'haml-rails'
 gem 'devise'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'active_hash'
 

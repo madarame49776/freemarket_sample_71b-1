@@ -1,0 +1,12 @@
+.wrapper
+  .container
+    = render 'menu-list'
+    .card-edit-bord
+      .card-edit-bord_header
+        お支払い方法
+      .card-edit-bord_main
+        .card-edit-bord_main_head
+          クレジットカード一覧
+        .card_edit_bord_main_button
+          = image_tag 'icon-04.png', alt: '', height: '25px', width: '25px', class: 'card-icon'
+          = link_to 'クレジットカードを追加する', "/users/card", class: "card_edit_bord_main_button-link"

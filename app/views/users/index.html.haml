@@ -1,0 +1,26 @@
+.wrapper
+  .container
+    = render 'menu-list'
+    .right-container
+      .profile
+        = image_tag 'bg-topMiddleDl-pict.jpg', alt: '', height: '100%', width: '100%', class: 'profile-image'
+        = image_tag 'member_photo_noimage_thumb', alt: '', height: '100px', width: '100px', class: 'member_photo'
+        .user-name
+          山田太郎
+        .user-info
+          .reviews
+            評価 0
+          .exihibited-item
+            出品数 0
+      .top-bord
+        .top-bord-header
+          購入した商品
+        .top-bord-select-tab
+          .top-bord-select-tab_left
+            取引中
+          .top-bord-select-tab_right
+            過去の取引
+        .top-bord-main-up
+          = image_tag 'gray-logo.png', alt: '', height: '100px', width: '100px', class: 'gray-logo'
+        .top-bord-main-down  
+          取引中の商品がありません

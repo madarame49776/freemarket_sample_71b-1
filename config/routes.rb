@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -7,9 +8,9 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   
-  root "products#index"
-  resources :products, only: [:index, :new]
-  resources :products, only: [:index, :show]
+  root "home#index"
+  #root "products#index"
+  resources :products, only: [:index, :new, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   $date = Time.now.in_time_zone('Tokyo').to_s
 end

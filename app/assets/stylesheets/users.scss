@@ -1,0 +1,368 @@
+.wrapper {
+  color: #000;
+  background: #FAFAFA;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 40px;
+  width: 1020px;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.profile {
+  width: 700px;
+  height: 200px;
+  position: relative;
+  }
+
+.top-bord {
+  width: 700px;
+  height: 513px;
+  background-color: #FAFAFA;
+  &-header {
+    height: 72px;
+    width: 668px;
+    line-height: 72px;
+    padding: 0 16px;
+    font-weight: bold;
+    }
+  &-select-tab {
+    height: 72px;
+    width: 100%;
+    display: flex;
+    &_right {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      line-height: 72px;
+      font-weight: bold;
+      background-color: #eee;
+    }
+    &_left {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      line-height: 72px;
+      font-weight: bold;
+      border-top: solid 2px #3CCACE ;
+    }
+  }
+  &-main-up {
+    width: 700px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  &-main-down {
+    width: 700px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+  }
+}
+
+.menu-list {
+  width: 280px;
+  background-color: #FFFFFF;
+  border: solid 2px rgba(0, 0, 0, 0.356);
+  text-decoration: none;
+  .logout {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    .logout-link {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .card-create {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    .card-create-link {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .exhibition {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .draft {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .exhibiting {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .exhibited-during_trading {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .exhibited-during_trading {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .exhidited-past {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bought-item-during_trading {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bought-item-past {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .news {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .evaluation {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .guide {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.356);
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact {
+    font-size: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.member_photo {
+  position: absolute;
+  left: 305px;
+  top: 45px;
+  
+}
+
+.user-name {
+  position: absolute;
+  font-weight: bold;
+  font-size: 17px;
+  left: 320px;
+  bottom: 35px;
+}
+
+.user-info {
+  width: 125px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  left: 290px;
+}
+.glay-logo {
+  color: #cccccc;
+}
+
+.card-edit-bord {
+  width: 700px;
+  height: 400px;
+  background-color: #FFFFFF;
+  &_header {
+   width: 700px;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 24px;
+   font-weight: bold;
+   border-bottom: 1px solid #e1e4e8;
+  }
+  &_main {
+    width: 700px;
+    height: 308px;
+  &_head {
+    width: 320px;
+    height: 16px;
+    padding-top: 64px;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+  .card_edit_bord_main_button {
+    border-radius: 5px;
+    width: 320px;
+    height: 350x;
+    padding: 5px;
+    margin: 40px 188px;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    .card-icon {
+      position: relative;
+      top: 5px;
+    }
+    .card_edit_bord_main_button-link {
+      text-decoration: none;
+      color: white;
+    }
+  }
+ }
+}
+
+.logout-bord {
+  height: 100px;
+  width: 572px;
+  background-color: #FFFFFF;
+  padding: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+  }
+}
+
+.card-registration {
+  width: 700px;
+  height: 540px;
+  background-color: #FFFFFF;
+  &_head {
+    font-weight: bold;
+    width: 700px;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 24px;
+   border-bottom: 1px solid #e1e4e8;
+  }
+   &_body {
+    height: 407px;
+    width: 620px;
+    padding: 40px;
+    &--1 {
+      display: flex;
+      margin: 0 auto;
+      width: 300px;
+    }
+    &--2 {
+      display: flex;
+      margin: 0 auto;
+      width: 300px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    &--3 {
+      display: flex;
+      margin: 0 auto;
+      width: 300px;
+
+    }
+    .card-registration_body--button-area {
+      height: 900px;
+      padding: 40px;
+    }
+    .card-registration_button {
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 0 auto;
+    }
+  }
+  .required {
+    background-color: red;
+    color: white;
+    margin-left: 5px;
+    border-radius: 3px;
+  }
+  .number-input {
+    width: 309px;
+    height: 28px;
+    padding: 10px 16px 8px 16px;
+    margin: 0 auto;
+  }
+  .security-input {
+    width: 309px;
+    height: 28px;
+    padding: 10px 16px 8px 16px;
+    margin: 0 auto;
+  }
+  .credit-card-input-field {
+    width: 350px;
+    margin-left: 150px;
+    margin-top: 5px;
+  }
+  .card-registration_icons {
+    margin-top: 10px;
+  }
+  .card-deadline-select {
+    height: 40px;
+    width: 250px;
+    display: flex;
+    margin-top: 15px;
+    margin-left: 150px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    .card-month {
+      width: 100%;
+    }
+  }
+}

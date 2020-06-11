@@ -1,30 +1,32 @@
-nav {
+.breadCrumbs {
   height: 55px;
   width: 100%;
   border-top: solid 1px #eee;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   background-color: #FFF;
-}
 
-ul {
-  display: flex;
-  // height: 54px;
-  width: 90%;
-  margin: 0 auto;
-  line-height: 54px;
-  li {
-    padding-right: 10px;
-    font-size: 14px;
-    .genre:hover {
-      color: #3ccace;
-    }
-    a, a:visited {
-      color: #333;
-      text-decoration: none;
-    }
-    .product-name {
-      font-weight: bold;
+  &__list {
+    display: flex;
+    height: 54px;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 54px;
+    &__item {
+      padding-right: 10px;
+      font-size: 14px;
+      .genre:hover {
+        color: #3ccace;
+      }
+      a, a:visited {
+        color: #333;
+        text-decoration: none;
+      }
+      .product-name {
+        font-weight: bold;
+      }
     }
   }
 }
+
+
 

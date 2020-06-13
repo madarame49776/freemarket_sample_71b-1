@@ -14,6 +14,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer    :prefecture_id, null: false
       t.timestamps
     end
+    add_foreign_key :images, :products, column: :product_id
   end
 end
 

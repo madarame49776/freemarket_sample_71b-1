@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  get 'users/index'
+  
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -10,12 +9,9 @@ Rails.application.routes.draw do
   end
   
   root "home#index"
-  #root "products#index"
   resources :products, only: [:index, :new, :show]
 
-  root "products#index"
-  resources :products, only: [:index, :new]
-  resources :products, only: [:index, :show]
+  resources :products
   resources :users, only: [:index, :show, :new, :edit]
 
   

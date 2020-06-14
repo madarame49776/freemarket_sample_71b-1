@@ -80,4 +80,4 @@ gem 'devise'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'active_hash'
 gem 'mini_racer'
-
+gem 'ancestry'

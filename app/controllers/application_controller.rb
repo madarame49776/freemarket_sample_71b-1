@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
       username == 'admin' && password == '2222'
     end
   end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil)
+  end
 end

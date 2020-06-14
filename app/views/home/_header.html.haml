@@ -13,9 +13,9 @@
               =image_tag "http://furima.tokyo/assets/icon-search-60a83ada85216fe00789cd16065281694d9a08948275fef83683fadcf131d84d.svg"
     .header__contents--menu
       %ul.right-items
-        %li.right-items__category
-          - @parents.each do |parent|
-            = link_to "#{parent.name}", category_path(parent), class: "parent_category",id: "#{parent.id}"
+        %li.right-items__category{data: {id: "#{parent_categories.id}"}}
+          - @category_parent_array.each do |parent_categories|- @parents.each do |parent|
+            = link_to "#{parent_categories.name}",select_category_index_item_path(parent_categories.id), class: "parent_category",id: "#{parent_categories.id}"
         %li.right-items__brands
           = link_to "ブランド"
       %ul.left-items
@@ -27,5 +27,3 @@
             = link_to "ログイン", new_user_session_path
           %li.left-items__new
             = link_to "新規登録", new_user_registration_path
-
-         

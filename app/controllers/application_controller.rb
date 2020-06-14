@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+
   private
 
   def configure_permitted_parameters
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def set_parents
-    @parents = Category.where(ancestry: nil)
+  def set_category_list
+    @category_parent_array = Category.where(ancestry: nil)
   end
 end

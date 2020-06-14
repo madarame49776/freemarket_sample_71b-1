@@ -81,3 +81,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'active_hash'
 gem 'mini_racer'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
+gem 'jquery-rails'

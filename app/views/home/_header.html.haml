@@ -14,7 +14,8 @@
     .header__contents--menu
       %ul.right-items
         %li.right-items__category
-          = link_to "カテゴリー"
+          -# - @parents.each do |parent|
+            -# = link_to "#{parent.name}", category_path(parent), class: "parent_category",id: "#{parent.id}"
         %li.right-items__brands
           = link_to "ブランド"
       %ul.left-items

@@ -182,8 +182,8 @@
               %span.fee-value
                 ー
         .sell
-          = f.submit "出品する", class: "sellbtn"
-          %button.save{tabindex: "0", type: "submit"} 下書きに保存
+          = f.submit "出品する", class: "sellbtn", tabindex: "0"
+          = f.submit "下書きに保存", class: "save", tabindex: "0"
           .back
             =link_to "もどる", root_path, class: "backbtn"
         .check
@@ -203,3 +203,4 @@
             =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
         %p.trademark
           © Mercari, Inc.
+  

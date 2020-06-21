@@ -12,12 +12,25 @@
             .header__contents--main-search-item
               =image_tag "http://furima.tokyo/assets/icon-search-60a83ada85216fe00789cd16065281694d9a08948275fef83683fadcf131d84d.svg"
     .header__contents--menu
-      %ul.right-items
-        %li.right-items__category
-          -# - @parents.each do |parent|
-            -# = link_to "#{parent.name}", category_path(parent), class: "parent_category",id: "#{parent.id}"
-        %li.right-items__brands
-          = link_to "ブランド"
+      .categorybox
+        %ul.right-items
+          %li.right-category
+            = link_to 'カテゴリー',products_path, class: "catbtn"
+            .category-items
+              %ul.category1
+                - @parents.each do |parent|
+                  %li.parent__list
+                    = link_to "#{parent.name}",products_path, class: "parent_category",id: "#{parent.id}"
+                    %ul.category2
+                      - parent.children.each do |child|
+                        %li.child__list
+                          = link_to "#{child.name}",products_path, class: "child_category",id: "#{child.id}"
+                          %ul.category3
+                            - child.children.each do |child|
+                              %li.grandchild__list
+                                = link_to "#{child.name}",products_path, class: "grandchild_category",id: "#{child.id}"
+      .right-items__brands
+        = link_to "ブランド", products_path, class: "brand-jump"
       %ul.left-items
         - if user_signed_in?
           %li.left-items__newgit

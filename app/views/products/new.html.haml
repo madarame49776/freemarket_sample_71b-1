@@ -14,17 +14,44 @@
                 %span.necessary
                   必須
           %p.upload
-            最大10枚までアップロードできます
-          %label
-            .input-field__contents-image__drop
+            最大5枚までアップロードできます
+          
+          #image-box-1 
+            .item-num-0#image-box__container
               = f.fields_for :images do |i|
-                %input.drop-input
-                  = i.file_field :name, value:"", style: "diplay:none"
-                %i.fas.fa-camera.camera
-                %p.drop-text
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
+                .input-field__contents-image__drop__js-file
+                  .input-area
+                    = i.file_field :image, type: 'file', name: "product[images_attributes][][name]", value:"", style: "display:none", id:"img-file"
+                    %label{for: "img-file"}
+                      %i.fas.fa-camera
+
+
+          -# #image-box-2
+          -#   #previews2
+              -# %label.input-field__contents-image__drop 
+            -#     .input-field__contents-image__drop__js-file{"data-index" => "#{i.index}"}
+            -#       .fas.fa-camera.camera
+            -#         = i.file_field :name, class: "image-input"
+
+
+                -# - if @product.persisted?
+                -#   - @product.images.each_with_index do |image, i|
+                -#     .image_preview
+                -#       = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+                -#       %span.js-remove 削除
+
+                 
+                  -# %br/
+                -# - if @product.persisted?
+                -#   = image.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+              -# - if @product.persisted?
+              -#   .input-field__contents-image__drop__js-file{"data-index" => "#{@product.images.count}"}
+              -#     = file_field_tag :name, name: "product[images_attributes][#{@product.images.count}][name]", class: 'image-input'
+                  -# .js-remove 削除
+                -# %p.drop-text
+                  -# ドラッグアンドドロップ
+                  -# %br
+                  -# またはクリックしてファイルをアップロード
 
       .input-field__contents          
         .input-field__contents-name
@@ -175,15 +202,15 @@
                 = f.number_field :price, placeholder: "0", class: "colum-input__maney-inner"
             .plice-colum__inner
               .plice-colum__inner-item
-                %div 販売手数料 (10%)
-              %span.fee-value
-                ー
+              -#   -# %div 販売手数料 (10%)
+              -# %span.fee-value
+              -#   ー
             %hr.style-divider
             .plice-colum__inner
-              .plice-colum__inner-item
-                販売利益
-              %span.fee-value
-                ー
+              -# .plice-colum__inner-item
+              -#   販売利益
+              -# %span.fee-value
+              -#   ー
         .sell
           = f.submit "出品する", class: "sellbtn", tabindex: "0"
           -# = f.submit "下書きに保存", class: "save", tabindex: "0"

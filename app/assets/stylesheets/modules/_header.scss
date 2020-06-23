@@ -46,21 +46,116 @@
   &__contents--menu {
     display: flex;
     justify-content: space-between;
+    .categorybox {
+      .right-items {
+        position: absolute;
+        z-index: 5;
+      }
+      .right-category {
+        .catbtn:hover {
+          color: orangered;
+        }
+        ul.category1{
+          display: none;
+          box-sizing: border-box;
+          background-color: rgb(255, 255, 255);
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+          width: 240px;
+          li{
+            border: 1px solid #f8f8f8;
+          &:hover {
+          background-color: #ea352d;
+          a {
+            color: #fff;
+              }
+            }
+          }
+          .parent__list {
+            height: 50px;
+            line-height: 50px;
+            .parent_category {
+              padding-left: 10px;
+            }
+          }
+        }
+        
+        ul.category2{
+          display: none;
+          background-color: rgb(255, 255, 255);
+          bottom: 0px;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+          display: none;
+          left: 240px;
+          position: absolute;
+          top: 20px;
+          width: 240px;
+          li.child__list{
+            background-color: rgb(255, 255, 255);
+            a{
+              color:#000;
+            }
+          }
+          li{
+            &:hover {
+            background-color: #ea352d;
+            a {
+              color: #fff;
+                }
+              }
+            }
+            .child__list {
+              padding-left: 10px;
+            }
+          }
+        
+        
+        ul.category3{
+          display: none;
+          background-color: rgb(255, 255, 255);
+          bottom: 0px;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+          display: none;
+          left: 240px;
+          position: absolute;
+          top: 0px;
+          width: 320px;
+          cursor: pointer;
+          li.grandchild__list{
+            background-color: rgb(255, 255, 255);
+            a{
+              color:#000;
+            }
+          }
+          li{
+            &:hover {
+            background-color: #ea352d;
+            a {
+              color: #fff;
+                }
+              }
+            }
+            .grandchild__list {
+              padding-left: 10px;
+            }
+        }
+      }
+    }
     a {
       text-decoration: none;
       color: black;
       font-size: small;
     }
-    ul {
-      display: flex;
-      justify-content: space-between;
+    .right-items__brands {
+      margin-right: 600px;
     }
     .right-items {
       &__brands {
         margin-left: 50px;
+        text-decoration: none;
       }
     }
     .left-items {
+      display: flex;
       &__rogin {
         margin-right: 50px;
       }

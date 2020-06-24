@@ -25,33 +25,12 @@
                     %label{for: "img-file"}
                       %i.fas.fa-camera
 
-
-          -# #image-box-2
-          -#   #previews2
-              -# %label.input-field__contents-image__drop 
-            -#     .input-field__contents-image__drop__js-file{"data-index" => "#{i.index}"}
-            -#       .fas.fa-camera.camera
-            -#         = i.file_field :name, class: "image-input"
-
-
+                -#下記edit時で参考にする
                 -# - if @product.persisted?
                 -#   - @product.images.each_with_index do |image, i|
                 -#     .image_preview
                 -#       = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
                 -#       %span.js-remove 削除
-
-                 
-                  -# %br/
-                -# - if @product.persisted?
-                -#   = image.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-              -# - if @product.persisted?
-              -#   .input-field__contents-image__drop__js-file{"data-index" => "#{@product.images.count}"}
-              -#     = file_field_tag :name, name: "product[images_attributes][#{@product.images.count}][name]", class: 'image-input'
-                  -# .js-remove 削除
-                -# %p.drop-text
-                  -# ドラッグアンドドロップ
-                  -# %br
-                  -# またはクリックしてファイルをアップロード
 
       .input-field__contents          
         .input-field__contents-name
@@ -62,7 +41,6 @@
                 %span.necessary
                   必須
             .name-input
-              -# %input.drop-input{autocomp: "off", name: "product[name]", placeholder: "  40文字まで", type: "text", value: ""}
               = f.text_field :name, {class: "drop-input", placeholder: "40文字まで"}
           .explain
             .input-field__contents-image__headline
@@ -71,7 +49,6 @@
                 商品の説明
                 %span.necessary
                   必須
-            -# %textarea.text-area{name: "description", rows: "7", cols: "84",placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n"}
             = f.text_area :description, {class: "drop-input", placeholder: "40文字まで"}
           .text-counts
             %span> 0/1000
@@ -88,23 +65,22 @@
                 %span.necessary
                   必須
             .name-form
-              -# %form{action: "example.cgi", method: "post"}
               %select.select-input{name: "product[category_id]"}
                 %option{"aria-selected": "false", label: "選択してください", selected: "selected", value: ""} 選択してください
                 %option{"aria-selected": "true", label: "レディース", value: "1"} レディース
-                %option{"aria-selected" => "false", :label => "メンズ", :value => "2"} メンズ
-                %option{"aria-selected" => "false", :label => "ベビー・キッズ", :value => "3"} ベビー・キッズ
-                %option{"aria-selected" => "false", :label => "インテリア・住まい・小物", :value => "4"} インテリア・住まい・小物
-                %option{"aria-selected" => "false", :label => "本・音楽・ゲーム", :value => "5"} 本・音楽・ゲーム
-                %option{"aria-selected" => "false", :label => "おもちゃ・ホビー・グッズ", :value => "1328"} おもちゃ・ホビー・グッズ
-                %option{"aria-selected" => "false", :label => "コスメ・香水・美容", :value => "6"} コスメ・香水・美容
-                %option{"aria-selected" => "false", :label => "家電・スマホ・カメラ", :value => "7"} 家電・スマホ・カメラ
-                %option{"aria-selected" => "false", :label => "スポーツ・レジャー", :value => "8"} スポーツ・レジャー
-                %option{"aria-selected" => "false", :label => "ハンドメイド", :value => "9"} ハンドメイド
-                %option{"aria-selected" => "false", :label => "チケット", :value => "1027"} チケット
-                %option{"aria-selected" => "false", :label => "自動車・オートバイ", :value => "1318"} 自動車・オートバイ
-                %option{"aria-selected" => "false", :label => "その他", :value => "10"} その他
-              %svg{"aria-hidden" => "true", :fill => "#888888", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24", :class => "area"}
+                %option{"aria-selected": "false", label: "メンズ", value: "2"} メンズ
+                %option{"aria-selected": "false", label: "ベビー・キッズ", value: "3"} ベビー・キッズ
+                %option{"aria-selected": "false", label: "インテリア・住まい・小物", value: "4"} インテリア・住まい・小物
+                %option{"aria-selected": "false", label: "本・音楽・ゲーム", value: "5"} 本・音楽・ゲーム
+                %option{"aria-selected": "false", label: "おもちゃ・ホビー・グッズ", value: "1328"} おもちゃ・ホビー・グッズ
+                %option{"aria-selected": "false", label: "コスメ・香水・美容", value: "6"} コスメ・香水・美容
+                %option{"aria-selected": "false", label: "家電・スマホ・カメラ", value: "7"} 家電・スマホ・カメラ
+                %option{"aria-selected": "false", label: "スポーツ・レジャー", value: "8"} スポーツ・レジャー
+                %option{"aria-selected": "false", label: "ハンドメイド", value: "9"} ハンドメイド
+                %option{"aria-selected": "false", label: "チケット", value: "1027"} チケット
+                %option{"aria-selected": "false", label: "自動車・オートバイ", value: "1318"} 自動車・オートバイ
+                %option{"aria-selected": "false", label: "その他", value: "10"} その他
+              %svg{"aria-hidden": "true", fill: "#888888", "fill-rule": "evenodd", height: "24", viewbox:  "0 0 24 24", width: "24", class: "area"}
                 %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .please-enter
               入力してください
@@ -114,7 +90,6 @@
                 %span.any
                   任意
             .name-input
-              -# %input.option-input{autocomplete: "off", name: "name", placeholder: "  40文字まで", type: "text", value: ""}
               = f.text_field :brand, class: "option-input"
             .headlabel
               %label
@@ -122,17 +97,16 @@
                 %span.necessary
                   必須
             .name-form
-              -# %form{action: "example.cgi", method: "post"}
-              %select.select-input{:name => "product[condition]"}
-                %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-                %option{"aria-selected" => "false", :label => "新品、未使用", :value => "1"} 新品、未使用
-                %option{"aria-selected" => "false", :label => "未使用に近い", :value => "2"} 未使用に近い
-                %option{"aria-selected" => "false", :label => "目立った傷や汚れなし", :value => "3"} 目立った傷や汚れなし
-                %option{"aria-selected" => "false", :label => "やや傷や汚れあり", :value => "4"} やや傷や汚れあり
-                %option{"aria-selected" => "false", :label => "傷や汚れあり", :value => "5"} 傷や汚れあり
-                %option{"aria-selected" => "false", :label => "全体的に状態が悪い", :value => "6"} 全体的に状態が悪い
-              %svg{"aria-hidden" => "true", :fill => "#888888", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24", :class => "area"}
-                %path{:d => "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
+              %select.select-input{name: "product[condition]"}
+                %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
+                %option{"aria-selected": "false", label: "新品、未使用", value: "1"} 新品、未使用
+                %option{"aria-selected": "false", label: "未使用に近い", value: "2"} 未使用に近い
+                %option{"aria-selected": "false", label: "目立った傷や汚れなし", value: "3"} 目立った傷や汚れなし
+                %option{"aria-selected": "false", label: "やや傷や汚れあり", value: "4"} やや傷や汚れあり
+                %option{"aria-selected": "false", label: "傷や汚れあり", value: "5"} 傷や汚れあり
+                %option{"aria-selected": "false", label: "全体的に状態が悪い", value: "6"} 全体的に状態が悪い
+              %svg{"aria-hidden": "true", fill: "#888888", "fill-rule": "evenodd", height:  "24", viewbox: "0 0 24 24", width:  "24", class: "area"}
+                %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .please-enter
               入力してください  
     .input-field
@@ -147,13 +121,12 @@
               %span.necessary
                 必須
             .name-form
-              -# %form{action: "example.cgi", method: "post"}
-              %select.select-input{:name => "product[send_price]"}
-                %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-                %option{"aria-selected" => "false", :label => "送料込み(出品者負担)", :value => "2"} 送料込み(出品者負担)
-                %option{"aria-selected" => "false", :label => "着払い(購入者負担)", :value => "1"} 着払い(購入者負担)
-              %svg{"aria-hidden" => "true", :fill => "#888888", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24", :class => "area"}
-                %path{:d => "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
+              %select.select-input{name: "product[send_price]"}
+                %option{"aria-selected": "true", label:  "選択してください", selected:  "selected", value:  ""} 選択してください
+                %option{"aria-selected": "false", label: "送料込み(出品者負担)", value: "2"} 送料込み(出品者負担)
+                %option{"aria-selected": "false", label: "着払い(購入者負担)", value: "1"} 着払い(購入者負担)
+              %svg{"aria-hidden": "true", fill:  "#888888", "fill-rule": "evenodd", height: "24", viewbox: "0 0 24 24", width:  "24", class:  "area"}
+                %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .please-enter
               入力してください
             .headlabel
@@ -173,14 +146,13 @@
                 %span.necessary
                   必須
             .name-form
-              -# %form{action: "example.cgi", method: "post"}
-              %select.select-input{:name => "product[ship_day]"}
-                %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-                %option{"aria-selected" => "false", :label => "1~2日で発送", :value => "1"} 1~2日で発送
-                %option{"aria-selected" => "false", :label => "2~3日で発送", :value => "2"} 2~3日で発送
-                %option{"aria-selected" => "false", :label => "4~7日で発送", :value => "3"} 4~7日で発送
-              %svg{"aria-hidden" => "true", :fill => "#888888", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24", :class => "area"}
-                %path{:d => "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
+              %select.select-input{name:  "product[ship_day]"}
+                %option{"aria-selected": "true", label:  "選択してください", selected:  "selected", value:  ""} 選択してください
+                %option{"aria-selected": "false", label:  "1~2日で発送", value: "1"} 1~2日で発送
+                %option{"aria-selected": "false", label: "2~3日で発送", value:  "2"} 2~3日で発送
+                %option{"aria-selected": "false", label: "4~7日で発送", value: "3"} 4~7日で発送
+              %svg{"aria-hidden": "true", fill: "#888888", "fill-rule": "evenodd", height: "24", viewbox:  "0 0 24 24", width: "24", class: "area"}
+                %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
             .please-enter
               入力してください  
     .input-field
@@ -198,21 +170,23 @@
               %span.maney
                 ¥
               .colum-input
-                -# %input.colum-input__maney-inner{autocomplete: "off", name: "price", placeholder: "0", type: "number", value: ""}
                 = f.number_field :price, placeholder: "0", class: "colum-input__maney-inner"
             .plice-colum__inner
               .plice-colum__inner-item
+              -# 後に使用予定
               -#   -# %div 販売手数料 (10%)
               -# %span.fee-value
               -#   ー
             %hr.style-divider
             .plice-colum__inner
+            -# 後に使用予定
               -# .plice-colum__inner-item
               -#   販売利益
               -# %span.fee-value
               -#   ー
         .sell
           = f.submit "出品する", class: "sellbtn", tabindex: "0"
+          -# 後に使用予定
           -# = f.submit "下書きに保存", class: "save", tabindex: "0"
           .back
             =link_to "もどる", root_path, class: "backbtn"

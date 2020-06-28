@@ -35,6 +35,8 @@
         - if user_signed_in?
           %li.left-items__newgit
             = link_to "ログアウト", destroy_user_session_path, method: :delete
+          %li.left-items__mypege
+            = link_to "マイページ", users_path
         - else
           %li.left-items__rogin
             = link_to "ログイン", new_user_session_path

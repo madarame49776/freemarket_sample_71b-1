@@ -147,3 +147,17 @@ Asscsiation
 Association
 
 - belongs_to:product
+
+# cradsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|Integer|null: false,foreign_key: true|
+|cusomer_id|String|null: false|
+|card_id|String|null: false|
+
+Association
+
+- belongs_to:user
+
+
+

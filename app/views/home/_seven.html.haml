@@ -6,40 +6,62 @@
         %h3.heading アーカイバ
     .contents-lists
       .contents-list
-        =link_to "#" do
-          %figure.contents-list--item
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
-          .contents-list--inner
-            %h3.name  mmmmmm
-            .data
-              %ul
-                %li 30303円
-                %li
-                  %i.fa.fa-star.likeIcon 0
-              %p (税込)
-      .contents-list
-        =link_to "#" do
-          %figure.contents-list--item
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-          .contents-list--inner
-            %h3.name  mmmmmm
-            .data
-              %ul
-                %li 30303円
-                %li
-                  %i.fa.fa-star.likeIcon 0
-              %p (税込)
-      .contents-list
-        =link_to "#" do
-          %figure.contents-list--item
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-          .contents-list--inner
-            %h3.name  mmmmmm
-            .data
-              %ul
-                %li 30303円
-                %li
-                  %i.fa.fa-star.likeIcon 
-                  0
-              %p (税込)
-        
+        - @brandProducts.each do |product|
+          =link_to "#" do
+            .contents-list__itmes
+              .contents-list--item
+                = link_to product_path(product), class: "listBtn" do
+                  %figure.contents-list--item
+                    = image_tag product.images[0].name.url, alt: "image_url",size: "200x150", class:"new-img"
+              .contents-list--inner
+                %h3.name  
+                  = product.name
+                .data
+                  %ul
+                    %li 
+                      = product.price
+                      円
+                    %li
+                      %i.fa.fa-star.likeIcon 0
+                  %p (税込)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      -# .contents-list
+      -#   =link_to "#" do
+      -#     %figure.contents-list--item
+      -#       =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
+      -#     .contents-list--inner
+      -#       %h3.name  mmmmmm
+      -#       .data
+      -#         %ul
+      -#           %li 30303円
+      -#           %li
+      -#             %i.fa.fa-star.likeIcon 0
+      -#         %p (税込)
+      -# .contents-list
+      -#   =link_to "#" do
+      -#     %figure.contents-list--item
+      -#       =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
+      -#     .contents-list--inner
+      -#       %h3.name  mmmmmm
+      -#       .data
+      -#         %ul
+      -#           %li 30303円
+      -#           %li
+      -#             %i.fa.fa-star.likeIcon 
+      -#             0
+      -#         %p (税込)

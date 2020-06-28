@@ -22,59 +22,59 @@
     }
   }
   .contents-lists {
-    display: flex;
-    justify-content: space-around;
-    margin: 26px auto;
-    width: 780px;
     .contents-list {
-      width: 220px;
-      background-color: white;
-      display: inline-block;
+      display: flex;
+      justify-content: center;
       a {
         display: inline-block;
         text-decoration: none;
       }
-      .contents-list--item {
-        width: 220px;
-        height: 150px;
-        margin: 0;
-        z-index: auto;
-        position: relative;
-      }
-      img {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        z-index: auto;
-        height: 150px;
-        object-fit: cover;
-      }
-      .contents-list--inner {
-        text-align: left;
-        padding: 13px;
-        color: black;
-        
-        .name {
-          font-size: 13px;
-          line-height: 1.5;
-          overflow: hidden;
+      .contents-list__itmes{
+      width: 220px;
+      margin: 0px 25px 0px 25px;
+      background-color: white;
+        .contents-list--item {
+          width: 220px;
+          height: 150px;
+          margin: 0;
+          z-index: auto;
+          position: relative;
         }
-        .data {
-          font-size: 16px;
-          ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            
+        img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          z-index: auto;
+          height: 150px;
+          object-fit: cover;
+        }
+        .contents-list--inner {
+          text-align: left;
+          padding: 13px;
+          color: black;
+          
+          .name {
+            font-size: 13px;
+            line-height: 1.5;
+            overflow: hidden;
           }
-          p {
-            font-size: 10px;
+          .data {
+            font-size: 16px;
+            ul {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              
+            }
+            p {
+              font-size: 10px;
+            }
           }
         }
-      }
     }
+  }
   }
 }

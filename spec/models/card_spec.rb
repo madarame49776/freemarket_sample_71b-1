@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Card, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
   describe Card do
     describe '#pay' do
       it '有効です' do
@@ -24,10 +23,6 @@ RSpec.describe Card, type: :model do
         card.valid?
         expect(card.errors[:card_id]).to include("can't be blank")
       end
-
-    #   it 'カード番号がない場合は登録できない' do
-    #     user = create(:user)
-    #     card = bulid(:user, )
     end
   end
 end

@@ -60,12 +60,14 @@
             商品の詳細
           .input-field__contents-image__headline
             .headlabel
-              %label
-                = f.label :category_id, "カテゴリー"
-                %span.necessary
-                  必須
-                .name-form
-                  = f.select :category, @parent, {}, {class: 'box__select', id: 'parent_category'}
+              = f.label :category_id, "カテゴリー" ,class: "new-listing__sell-up-load-head"
+              %span.new-listing__form-require
+                必須
+              .sell__about__right__wrap-box.parent
+                %select#parent
+                  %option{value: 0} ---
+                  -  @parents.each do |parent|
+                    %option{value: "#{parent.id}"} #{parent.name}
 
               -# %select.select-input{name: "product[category_id]"}
               -#   %option{"aria-selected": "false", label: "選択してください", selected: "selected", value: ""} 選択してください

@@ -1,25 +1,17 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
-  before_action :set_category, only: [:new, :create]
-
-
-
-  # require メソッドを利用することで、引数に設定した key の 値だけを取得することができます。 
-  require 'json'
+  before_action :set_product,    only: [:show, :edit, :update, :destroy]
+  before_action :set_categories, only: [:edit, :update]
 
 
   def index
-    # @parent = Category.where(ancestry: nil)
+    # @parents = Category.where(ancestry: nil)
+
   end
 
   def new 
     @product = Product.new
     @product.images.new
-    @parent = ["選択してください"]
-    #データベースから、親カテゴリーのみ抽出し、配列化
-      Category.where(ancestry: nil).each do |parent|
-      @parent << parent.name
-      end
+   
   end 
 
   def create
@@ -49,20 +41,17 @@ class ProductsController < ApplicationController
   def destroy
   end
 
- # 親カテゴリーが選択された後に動くアクション
   def children_category
-    binding.pry
-    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    #子要素を探し、値を定義。定義された値をjsonへ送る
+    @children_category = Category.where(ancestry: params[:parent_category_id])
+    render json:  @children_category
   end
 
-# 子カテゴリーが選択された後に動くアクション
   def grandchildren_category
-    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
-   
+    #孫要素を探し、値を定義。定義された値をjsonへ送る
+    @grandchildren_category = Category.where(ancestry: "#{params[:parent_category_id]}/#{params[:children_category_id_id]}")
+    render json: @grandchildren_category 
   end
-
 
 
   private
@@ -74,14 +63,12 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
-    
   end
 
-  def set_category
-    @category_parent_array = ["選択してください"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+  def set_categories
+    #カテゴリーから、親要素を探して定義
+    @categories = Category.where(ancestry: nil)
   end
+  
 
 end

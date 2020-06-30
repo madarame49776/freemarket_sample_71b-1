@@ -1,5 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
+  before_action :set_category, only: [:new, :create]
+
+
+
+  # require メソッドを利用することで、引数に設定した key の 値だけを取得することができます。 
+  require 'json'
+
 
   def index
     # @parent = Category.where(ancestry: nil)
@@ -44,16 +51,16 @@ class ProductsController < ApplicationController
 
  # 親カテゴリーが選択された後に動くアクション
   def children_category
+    binding.pry
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_categories = Category.where(ancestry: params[:parent_category_id])
-    render json: @category_categories
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
 
 # 子カテゴリーが選択された後に動くアクション
   def grandchildren_category
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @grandchildren_categories = Category.where(ancestry: "#{params[:parent_category_id]}/#{params[:children_category_id]}")
-    render json: @grandchildren_categories
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+   
   end
 
 
@@ -66,11 +73,15 @@ class ProductsController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(patams[:id])
+    @product = Product.find(params[:id])
+    
   end
-  
-  def set_categories
-    @categories = Category.where(ancestry: nil)
+
+  def set_category
+    @category_parent_array = ["選択してください"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
   end
 
 end

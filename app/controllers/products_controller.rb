@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
 
   def grandchildren_category
     #孫要素を探し、値を定義。定義された値をjsonへ送る
-    @grandchildren_category = Category.where(ancestry: "#{params[:parent_category_id]}/#{params[:children_category_id_id]}")
+    @grandchildren_category = Category.where(ancestry: "#{params[:parent_category_id]}/#{params[:children_category_id]}")
     render json: @grandchildren_category 
   end
 

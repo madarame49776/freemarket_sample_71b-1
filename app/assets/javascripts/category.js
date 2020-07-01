@@ -29,6 +29,7 @@ $(function(){
     });
   });
   $(this).on("change", "#child", function() {
+    // debugger
     let parent_id = $("#parent").val();
     let child_id = $("#child").val();
     $.ajax({
@@ -44,10 +45,10 @@ $(function(){
       $('.grand_child').css('display', 'block');
       $('#grand_child').empty();
       $('#grand_child').append(buildPrompt);
-      
+
        parent.forEach(function(child) {
         var html_option = buildHtmlOption(child);
-        console.log(html_option);
+         console.log(buildHtmlOption(html_option));
         $('#grand_child').append(html_option);
       });
     })

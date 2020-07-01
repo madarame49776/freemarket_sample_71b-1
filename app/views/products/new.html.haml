@@ -59,19 +59,20 @@
             商品の詳細
           .input-field__contents-image__headline
             .headlabel
-              = f.label :category_id, "カテゴリー" ,class: "new-listing__sell-up-load-head"
-              %span.new-listing__form-require
+              = f.label :category_id, "カテゴリー"
+              %span.necessary
                 必須
               .sell__about__right__wrap-box.parent
-                %select#parent
+                %select.select-box1#parent
                   %option{value: 0} ---
                   -  @parents.each do |parent|
                     %option{value: "#{parent.id}"} #{parent.name}
                     -# select#childを代入するイメージ
               .child
-                %select#child
+                %select.select-box2#child
               .grand_child
-                %select#grand_child  
+                .select-box3
+                  = f.collection_select(:category_id, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
             .please-enter
               入力してください
             .headlabel

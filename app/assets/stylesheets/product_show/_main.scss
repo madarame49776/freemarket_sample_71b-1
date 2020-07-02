@@ -39,28 +39,18 @@
                 height: 100%;
                 width: 100%;
                 box-sizing: border-box;
-                // margin: 0 15px;
                 .mainImage {
                   object-fit: cover;
-                  // height: 346px;
                   border: solid 1px silver;
                 }
                 .subImage__ul {
-                  // height: 100%;
-                  // width: 100%;
-                  
-                  // text-justify: auto;
                   display: flex;
                   justify-content: center;
                   .subImage__li {
-                    // height: 100%;
-                    // width: 600px;
                     margin: 0 5px;
                     box-sizing: border-box;
                     .subImage {
                       object-fit: cover;
-                      // height: 150px;
-                      // width: 80%;
                       border: solid 1px silver;
                     }
                   }

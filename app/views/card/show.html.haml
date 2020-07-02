@@ -1,0 +1,20 @@
+.warrper
+  = render "home/header"
+  .container
+    .card-show
+      =render "users/menu-list"
+      .card-data
+        .card-title
+          %label 支払い方法
+        .card-data__list
+          .card-data__list__cord
+            %p クレジットカード一覧
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+          .card-data__delete
+            = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              %button 削除する

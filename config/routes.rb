@@ -9,9 +9,22 @@ Rails.application.routes.draw do
   
   root "home#index"
   
-  resources :products
+  resources :products, except: [:index]  do 
+  #カテゴリーを表示させるためのルーティングを設定
+  #do~endと書かなかったためエラーになった
+    get 'new/children_category', to: 'products#children_category'
+    get 'new/grandchildren_category', to: 'products#grandchildren_category'
+  end
+
+  
   resources :users, only: [:index, :show, :new, :edit]
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  $date = Time.now.in_time_zone('Tokyo').to_s
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
+
 end

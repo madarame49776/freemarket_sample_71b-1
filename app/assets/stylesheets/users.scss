@@ -12,6 +12,12 @@
   width: 1020px;
   justify-content: space-between;
   text-decoration: none;
+  .required {
+    background-color: #3ccace;
+    color: white;
+    border-radius: 5%;
+    padding: 2px;
+  }
 }
 
 .profile {
@@ -84,6 +90,10 @@
       text-decoration: none;
       color: black;
     }
+  }
+  .new-products {
+    text-decoration: none;
+    color: black;
   }
   .card-create {
     border-bottom: solid 2px rgba(0, 0, 0, 0.356);
@@ -314,6 +324,10 @@
     .card-registration_body--button-area {
       height: 900px;
       padding: 40px;
+      .append-card {
+        text-decoration: none;
+        color: white;
+      }
     }
     .card-registration_button {
       display: flex;

@@ -1,13 +1,16 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product,    only: [:show, :edit, :update, :destroy]
+  before_action :set_categories, only: [:edit, :update]
+
 
   def index
-    @parent = Category.where(ancestry: nil)
+    # @parents = Category.where(ancestry: nil)
   end
 
   def new 
     @product = Product.new
     @product.images.new
+   
   end 
 
   def create
@@ -37,6 +40,19 @@ class ProductsController < ApplicationController
   def destroy
   end
 
+  def children_category
+    #子要素を探し、値を定義。定義された値をjsonへ送る
+    @children_category = Category.where(ancestry: params[:parent_category_id])
+    render json:  @children_category
+  end
+
+  def grandchildren_category
+    #孫要素を探し、値を定義。定義された値をjsonへ送る
+    @grandchildren_category = Category.where(ancestry: "#{params[:parent_category_id]}/#{params[:children_category_id]}")
+    render json: @grandchildren_category 
+  end
+
+
   private
 
   def product_params
@@ -46,8 +62,12 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
-
   end
 
+  def set_categories
+    #カテゴリーから、親要素を探して定義
+    @categories = Category.where(ancestry: nil)
+  end
+  
 
 end

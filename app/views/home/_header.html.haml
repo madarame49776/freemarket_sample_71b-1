@@ -15,26 +15,28 @@
       .categorybox
         %ul.right-items
           %li.right-category
-            = link_to 'カテゴリー',products_path, class: "catbtn"
+            = link_to 'カテゴリー',"#", class: "catbtn"
             .category-items
               %ul.category1
                 - @parents.each do |parent|
                   %li.parent__list
-                    = link_to "#{parent.name}",products_path, class: "parent_category",id: "#{parent.id}"
+                    = link_to "#{parent.name}","#", class: "parent_category",id: "#{parent.id}"
                     %ul.category2
                       - parent.children.each do |child|
                         %li.child__list
-                          = link_to "#{child.name}",products_path, class: "child_category",id: "#{child.id}"
+                          = link_to "#{child.name}","#", class: "child_category",id: "#{child.id}"
                           %ul.category3
                             - child.children.each do |child|
                               %li.grandchild__list
-                                = link_to "#{child.name}",products_path, class: "grandchild_category",id: "#{child.id}"
+                                = link_to "#{child.name}","#", class: "grandchild_category",id: "#{child.id}"
       .right-items__brands
-        = link_to "ブランド", products_path, class: "brand-jump"
+        = link_to "ブランド", "#", class: "brand-jump"
       %ul.left-items
         - if user_signed_in?
           %li.left-items__newgit
             = link_to "ログアウト", destroy_user_session_path, method: :delete
+          %li.left-items__mypege
+            = link_to "マイページ", users_path
         - else
           %li.left-items__rogin
             = link_to "ログイン", new_user_session_path

@@ -111,6 +111,59 @@
               }
             }
           }
+          .editBtn {
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-weight: bold;
+            padding: 0.25em 0;
+            text-decoration: none;
+            color: #3ccace;
+            background-color: darken(white, 5%);
+            transition: .4s;
+            font-size: 25px;
+            &:hover {
+              background-color: #3ccace;
+              color: white;
+            }
+          }
+          .destroyBtn {
+            margin-top: 20px;
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-weight: bold;
+            padding: 0.25em 0;
+            text-decoration: none;
+            color: #3ccace;
+            background-color: darken(white, 5%);
+            transition: .4s;
+            font-size: 25px;
+            &:hover {
+              background-color: #3ccace;
+              color: white;
+            }
+          }
+          .purchaseBtn {
+            margin-top: 20px;
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-weight: bold;
+            padding: 0.25em 0;
+            text-decoration: none;
+            color: #3ccace;
+            background-color: darken(white, 5%);
+            transition: .4s;
+            font-size: 25px;
+            &:hover {
+              background-color: #3ccace;
+              color: white;
+            }
+          }
         }
         .commentBox {
           height: 100%;

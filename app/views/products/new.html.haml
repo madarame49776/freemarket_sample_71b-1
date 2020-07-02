@@ -88,16 +88,7 @@
                 %span.necessary
                   必須
             .name-form
-              %select.select-input{name: "product[condition]"}
-                %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
-                %option{"aria-selected": "false", label: "新品、未使用", value: "1"} 新品、未使用
-                %option{"aria-selected": "false", label: "未使用に近い", value: "2"} 未使用に近い
-                %option{"aria-selected": "false", label: "目立った傷や汚れなし", value: "3"} 目立った傷や汚れなし
-                %option{"aria-selected": "false", label: "やや傷や汚れあり", value: "4"} やや傷や汚れあり
-                %option{"aria-selected": "false", label: "傷や汚れあり", value: "5"} 傷や汚れあり
-                %option{"aria-selected": "false", label: "全体的に状態が悪い", value: "6"} 全体的に状態が悪い
-              %svg{"aria-hidden": "true", fill: "#888888", "fill-rule": "evenodd", height:  "24", viewbox: "0 0 24 24", width:  "24", class: "area"}
-                %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
+              = f.select :condition, Product.conditions_i18n.invert, {}, class: "select-input", placeholder: 0
             .please-enter
               入力してください  
     .input-field
@@ -112,12 +103,7 @@
               %span.necessary
                 必須
             .name-form
-              %select.select-input{name: "product[send_price]"}
-                %option{"aria-selected": "true", label:  "選択してください", selected:  "selected", value:  ""} 選択してください
-                %option{"aria-selected": "false", label: "送料込み(出品者負担)", value: "2"} 送料込み(出品者負担)
-                %option{"aria-selected": "false", label: "着払い(購入者負担)", value: "1"} 着払い(購入者負担)
-              %svg{"aria-hidden": "true", fill:  "#888888", "fill-rule": "evenodd", height: "24", viewbox: "0 0 24 24", width:  "24", class:  "area"}
-                %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
+              = f.select :send_price, Product.send_prices_i18n.invert, {}, class: "select-input", placeholder: 0
             .please-enter
               入力してください
             .headlabel
@@ -137,13 +123,7 @@
                 %span.necessary
                   必須
             .name-form
-              %select.select-input{name:  "product[ship_day]"}
-                %option{"aria-selected": "true", label:  "選択してください", selected:  "selected", value:  ""} 選択してください
-                %option{"aria-selected": "false", label:  "1~2日で発送", value: "1"} 1~2日で発送
-                %option{"aria-selected": "false", label: "2~3日で発送", value:  "2"} 2~3日で発送
-                %option{"aria-selected": "false", label: "4~7日で発送", value: "3"} 4~7日で発送
-              %svg{"aria-hidden": "true", fill: "#888888", "fill-rule": "evenodd", height: "24", viewbox:  "0 0 24 24", width: "24", class: "area"}
-                %path{d: "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
+              = f.select :ship_day, Product.ship_days_i18n.invert, {}, class: "select-input", placeholder: 0
             .please-enter
               入力してください  
     .input-field

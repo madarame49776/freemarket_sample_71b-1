@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :address, dependent: :delete
+  has_many :products, dependent: :delete_all
   has_one :card, dependent: :destroy
+  
   with_options presence: true do
     validates :nickname
     validates :birthday

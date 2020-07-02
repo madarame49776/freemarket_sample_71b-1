@@ -110,6 +110,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
@@ -341,6 +343,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  enum_help
   dotenv-rails
   factory_bot_rails
   font-awesome-sass (~> 5.12.0)

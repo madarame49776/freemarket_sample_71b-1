@@ -20,7 +20,6 @@ $(function(){
 
       parent.forEach(function(child) {
         var html_option = buildHtmlOption(child);
-        // childIDの箇所に、取得したカテゴリーの子要素を取得したい
         $('#child').append(html_option);
       });
     })
@@ -29,7 +28,6 @@ $(function(){
     });
   });
   $(this).on("change", "#child", function() {
-    // debugger
     let parent_id = $("#parent").val();
     let child_id = $("#child").val();
     $.ajax({

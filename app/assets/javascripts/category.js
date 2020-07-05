@@ -8,7 +8,7 @@ $(function(){
     let parent_id = $(this).val();
     $.ajax({
       type: 'GET',
-      url: 'products/new/children_category',
+      url: 'new/children_category',
       data: {parent_category_id: parent_id},
       dataType: 'json'
     })
@@ -23,6 +23,7 @@ $(function(){
         $('#child').append(html_option);
       });
     })
+    
     .fail(function() {
       alert('エラー')
     });
@@ -32,7 +33,7 @@ $(function(){
     let child_id = $("#child").val();
     $.ajax({
         type: 'GET',
-        url: 'products/new/grandchildren_category',
+        url: 'new/grandchildren_category',
         data: {
           parent_category_id: parent_id,
           children_category_id: child_id

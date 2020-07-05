@@ -17,13 +17,20 @@
             最大5枚までアップロードできます
           
           #image-box-1 
+            - @product.images.each_with_index do |image, i|
+              .item-image
+                .item-image__content
+                  .item-image__content--icon
+                    = image_tag image.name.url, width: "150", height: "90"
+                .item-image__operetion
+                  .item-image__operetion--delete 削除
+
             .item-num-0#image-box__container
               .input-field__contents-image__drop__js-file
                 .input-area
                   = f.file_field :image, type: 'file', name: "product[images_attributes][][name]", value:"", style: "display:none", id:"img-file"
                   %label{for: "img-file"}
                     %i.fas.fa-camera
-
       .input-field__contents          
         .input-field__contents-name
           .input-field__contents-image__headline
@@ -55,16 +62,12 @@
               %span.necessary
                 必須
               .sell__about__right__wrap-box.parent
-                %select.select-box1#parent
-                  %option{value: 0} ---
-                  -  @parents.each do |parent|
-                    %option{value: "#{parent.id}"} #{parent.name}
-                    
-              .child
-                %select.select-box2#child
-              .grand_child
-                .select-box3
-                  = f.collection_select(:category_id, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
+                = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---", selected: @product.category.parent.parent_id}, {id: "parent"})
+              .children
+                = f.collection_select(:category_id, @product.category.parent.parent.children, :id, :name, {prompt: "---", selected: @product.category.parent_id}, {id: "child"})
+              .grand_children
+                = f.collection_select(:category_id, @product.category.parent.children, :id, :name, {prompt: "---", selected: @product.category.id}, {id: "grand_child"})
+
             .please-enter
               入力してください
             .headlabel
@@ -136,21 +139,13 @@
                 = f.number_field :price, placeholder: "0", class: "colum-input__maney-inner"
             .plice-colum__inner
               .plice-colum__inner-item
-              -# 後に使用予定
-              -#   -# %div 販売手数料 (10%)
-              -# %span.fee-value
-              -#   ー
+            
             %hr.style-divider
             .plice-colum__inner
-            -# 後に使用予定
-              -# .plice-colum__inner-item
-              -#   販売利益
-              -# %span.fee-value
-              -#   ー
+           
         .sell
-          = f.submit "出品する", class: "sellbtn", tabindex: "0"
-          -# 後に使用予定
-          -# = f.submit "下書きに保存", class: "save", tabindex: "0"
+          = f.submit "編集する", class: "sellbtn", tabindex: "0"
+        
           .back
             =link_to "もどる", root_path, class: "backbtn"
         .check

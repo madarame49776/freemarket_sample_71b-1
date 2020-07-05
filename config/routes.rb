@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :products, except: [:index]  do 
   #カテゴリーを表示させるためのルーティングを設定
   #do~endと書かなかったためエラーになった
+  collection do 
+    get 'new/children_category', to: 'products#children_category'
+    get 'new/grandchildren_category', to: 'products#grandchildren_category'
+  end
     get 'new/children_category', to: 'products#children_category'
     get 'new/grandchildren_category', to: 'products#grandchildren_category'
   end

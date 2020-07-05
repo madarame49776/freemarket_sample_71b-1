@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
 
 
   def index
-    # @parents = Category.where(ancestry: nil)
   end
 
   def new 
@@ -30,11 +29,12 @@ class ProductsController < ApplicationController
   end
 
   def update
-    if @product.update(product_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
+   if @product.update(product_params)
+    redirect_to root_path
+   else
+    render :edit
+   end
+    
   end
 
   def destroy
@@ -68,6 +68,7 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
+
 
   def set_categories
     #カテゴリーから、親要素を探して定義

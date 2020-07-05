@@ -8,7 +8,7 @@ $(function(){
     let parent_id = $(this).val();
     $.ajax({
       type: 'GET',
-      url: 'products/new/children_category',
+      url: 'new/children_category',
       data: {parent_category_id: parent_id},
       dataType: 'json'
     })
@@ -20,21 +20,20 @@ $(function(){
 
       parent.forEach(function(child) {
         var html_option = buildHtmlOption(child);
-        // childIDの箇所に、取得したカテゴリーの子要素を取得したい
         $('#child').append(html_option);
       });
     })
+    
     .fail(function() {
       alert('エラー')
     });
   });
   $(this).on("change", "#child", function() {
-    // debugger
     let parent_id = $("#parent").val();
     let child_id = $("#child").val();
     $.ajax({
         type: 'GET',
-        url: 'products/new/grandchildren_category',
+        url: 'new/grandchildren_category',
         data: {
           parent_category_id: parent_id,
           children_category_id: child_id

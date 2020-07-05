@@ -78,7 +78,7 @@
         -# ログイン中かつ出品者の場合
       
         -if user_signed_in? && current_user.id == @product.user_id
-          = link_to "商品を編集する", "#", class: "editBtn"
+          = link_to "商品を編集する", edit_product_path(params[:id]), class: "editBtn"
           = link_to "商品を削除する", product_path(params[:id]), method: :delete , class: "destroyBtn"
          
           -# ログイン中かつ出品者以外の場合
@@ -96,5 +96,3 @@
           %input{name: "utf8", type: "hidden", value: "✓",}
           %button{type: "submit", onclick: "#", class: "commentBtn"}
             コメントする
-            
-//福田さん作

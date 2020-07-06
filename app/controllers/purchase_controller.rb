@@ -23,7 +23,7 @@ class PurchaseController < ApplicationController
       :customer => card.customer_id,
       :currency => 'jpy',
     )
-    @product_purchaser= Product.find_by(params[:id])
+    @product_purchaser= Product.find(params[:id])
     @product_purchaser.update( buyer_id: current_user.id)
     redirect_to action: 'done'
   end

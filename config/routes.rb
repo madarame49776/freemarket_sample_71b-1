@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   root "home#index"
   
   resources :products, except: [:index]  do 
-  #カテゴリーを表示させるためのルーティングを設定
-  #do~endと書かなかったためエラーになった
   collection do 
     get 'new/children_category', to: 'products#children_category'
     get 'new/grandchildren_category', to: 'products#grandchildren_category'
@@ -33,7 +31,6 @@ Rails.application.routes.draw do
 
   resources :purchace, only: [:index] do
     collection do
-  #     get 'index', to:'purchase#index'
       post 'pay', to:'purchase#pay'
       get 'done', to:'purchase#done'
     end

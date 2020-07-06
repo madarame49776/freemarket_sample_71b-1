@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @parents = Category.where(ancestry: nil)
   end
 
   def edit
@@ -45,9 +46,6 @@ class ProductsController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(patams[:id])
-
+    @product = Product.find(params[:id])
   end
-
-
 end

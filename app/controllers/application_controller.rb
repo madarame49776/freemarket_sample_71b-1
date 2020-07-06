@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_ancestry
+
 
   private
 
@@ -17,4 +19,9 @@ class ApplicationController < ActionController::Base
       username == 'admin' && password == '2222'
     end
   end
+
+  def set_ancestry
+    @parents = Category.where(ancestry: nil)
+  end
+
 end

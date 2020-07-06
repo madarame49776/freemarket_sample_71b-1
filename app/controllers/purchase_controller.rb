@@ -25,6 +25,6 @@ class PurchaseController < ApplicationController
     )
     @product_purchaser= Product.find_by(params[:id])
     @product_purchaser.update( buyer_id: current_user.id)
-    redirect_to done_path
+    redirect_to action: 'done'
   end
 end

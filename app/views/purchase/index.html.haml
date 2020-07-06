@@ -3,6 +3,10 @@
     .purchase-confirm__main-content 購入内容の確認
     %section.purchase-confirm__main-products
       .purchase-confirm__main-products-inside
+        -# -if product.purchaser_id.present? 
+        -# .items-box_photo__sold
+        -#   .items-box_photo__sold__inner
+        -#     SOLD
         = image_tag "https://static.mercdn.net/thumb/photos/m23249414252_1.jpg?1587623882",class:"purchase-confirm__main-products-inside-img" 
         .purchase-confirm__main-products-inside-product
           .purchase-confirm__main-products-inside-product--name

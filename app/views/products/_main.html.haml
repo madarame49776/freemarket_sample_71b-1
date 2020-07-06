@@ -20,7 +20,7 @@
             %span
               (税込)
             %span
-              送料込み
+              = @product.status
         .itemDetail
           = @product.description
         .table
@@ -91,8 +91,9 @@
 
 
       .commentBox
-        %form{"accept-charset": "UTF-8", action: "#", method: "get", class: "commentForm"}
-          %textarea{name: "comments", rows: "3", class: "commentTextarea"}
-          %input{name: "utf8", type: "hidden", value: "✓",}
-          %button{type: "submit", onclick: "#", class: "commentBtn"}
-            コメントする
+        %form{"accept-charset" => "UTF-8", :action => "#", :method => "get", :class => "commentForm"}
+          %textarea{:name => "comments", :rows => "3", :class => "commentTextarea", :placeholder => "コメント"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓",}
+          - unless @product.buyer_id.present?
+            %button{:type => "submit", :onclick => "#", :class => "commentBtn"}
+              =link_to "購入する", purchace_index_path, class: "pay"

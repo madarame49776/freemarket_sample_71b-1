@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @parents = Category.where(ancestry: nil)
   end
 
   def edit
@@ -68,12 +69,9 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
-
-
+  
   def set_categories
     #カテゴリーから、親要素を探して定義
     @categories = Category.where(ancestry: nil)
   end
-  
-
 end

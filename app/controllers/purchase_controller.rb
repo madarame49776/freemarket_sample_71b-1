@@ -20,10 +20,10 @@ class PurchaseController < ApplicationController
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
       :amount => 50000,
-      :customer => card.customer_id,
+      :customer => @card.customer_id,
       :currency => 'jpy',
     )
-    @product_purchaser= Product.find(params[:id])
+    @product_purchaser= Product.find_by(params[:id])
     @product_purchaser.update( buyer_id: current_user.id)
     redirect_to action: 'done'
   end
